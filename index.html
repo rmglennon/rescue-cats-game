@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Collector</title>
+	<title>Cat Collector</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -13,32 +13,43 @@
 
 <body>
 
-<div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Rescue the Cats Game</h1>
-    <p class="lead">Collect the cats, but don't try to take too many at once.</p>
+    <p class="lead">Collect the cats, but they will escape if you try to collect too many at once!</p>
   </div>
-</div>
 
 <div class="container">
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <h2>Game rules</h2>
-      <p>You will be given a random number of cats to collect at the start of the game. </p>
+      <p>You will be given a random number of cats to rescue at the start of the game. </p>
       <p>
-        There are four cats below. By clicking on a cat, you will collect a specific amount
-        of points to your total score. You win the game by matching your total number
-        of cats collected to the random number you were supposed to collect. You lose the game
-        if you collect more cats that your house can hold and your total
+        There are four cats below. By clicking on a cat, you will rescue a specific amount
+        of cats and add points to your score. You win the game by exactly matching your cats collected to the random number you were directed to rescue. You lose if you rescue too many cats and your
         score is higher than the random number.</p>
-        <p>The value of each cat is hidden from you until you click on it.</p>
-        <p>Each time when the game starts, the game will change the values of each cat.</p>
-      </p>
+        <p>The value of each cat click is hidden from you until you click on it.</p>
+        <p>Each time the game starts, the values of the cats will change.</p>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
+      <div><h3>Catch this many cats:</h3>
+        <p id="random-total"></p>
+    </div>
+  </div>
+    <div class="col-md-3">
       <h3>Score<h3>
+        <div>Cats collected:
+          <p id="cat-totals"></p>
+      </div>
+      <div>Wins:
+        <p id="wins"></p>
+
     </div>
+    <div>Losses:
+        <p id="losses"></p>
+    </div>
+    </div>
+
 
   </div>
 
@@ -58,33 +69,15 @@
 
 
   </div>
-  <div class="row">
-    <div class="col-md-4">
-      <div>Catch this many cats:
-        <p id="random-total"></p>
-    </div>
-  </div>
-    <div class="col-md-4">
-
-        <div>Cats collected:
-          <p id="cat-totals"></p>
-      </div>
-    </div>
-    <div class="col-md-4">
-
-        <div>Wins:
-          <p id="wins"></p>
-
-      </div>
-      <div>Losses:
-          <p id="losses"></p>
-      </div>
-    </div>
     </div>
 
+    <!-- Make footer container fluid so it goes across the screen -->
+
+    <div class="container-fluid footer-section">
+    	<div class="row">
+    		<p>&copy; Copyright 2018 Rhonda Glennon</p>
+    	</div>
     </div>
-</div>
-</div>
 
 
 <script type="text/javascript" src="assets/javascript/game.js"></script>

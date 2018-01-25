@@ -5,11 +5,7 @@ var wins = 0;
 var losses = 0;
 
 function startGame() {
-  generateMatchNumber();
-  giveCatsRandomValues();
-}
-
-function playAgain() {
+  resetCounter();
   generateMatchNumber();
   giveCatsRandomValues();
 }
@@ -80,7 +76,7 @@ function generateRandomNum(min, max) {
 // generates the total that clicks need to sum to match
 // between 19-120
 function generateMatchNumber() {
-  matchNumber = generateRandomNum(19,30);
+  matchNumber = generateRandomNum(19,50);
   $("#random-total").text(matchNumber);
   return matchNumber;
 }
@@ -99,6 +95,20 @@ var addClicks = (function(clickValue) {
   }
 })();
 
+function resetCounter () {
+  // // query the value of the addClicks counter
+  var myTotalScore = addClicks(0);
+
+  // // multiple the current value of the counter times negative one
+  myTotalScore = (myTotalScore * -1);
+
+  // // reset the counter to zero
+  addClicks(myTotalScore);
+
+  // // check to make sure the counter is at zero
+  console.log("The big counter is now at: " + addClicks(0));
+}
+
 function compareClicksToMatch(catsCollected, matchNumber) {
   // var totalToMatch = matchNumber();
   if (catsCollected === matchNumber) {
@@ -106,33 +116,17 @@ function compareClicksToMatch(catsCollected, matchNumber) {
     $("#wins").text(wins);
     console.log("you win");
     // addClicks(catClicks * -1);
-    playAgain();
+    startGame();
   }
   if (catsCollected > matchNumber) {
     losses++;
     $("#losses").text(losses);
     console.log("you lose");
         // addClicks(catClicks * -1);
-    playAgain();
+    startGame();
     }
 }
 
 startGame();
 
-
-
 });
-
-
-
-// // // query the value of the addClicks counter
-// var myTotalScore = addClicks(0);
-//
-// // // multiple the current value of the counter times negative one
-// myTotalScore = (myTotalScore * -1);
-//
-// // // reset the counter to zero
-// addClick(myTotalScore);
-//
-// // // check to make sure the counter is at zero
-// console.log("The big counter is now at: " + addClick(0));
