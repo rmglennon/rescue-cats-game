@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
 var matchNumber;
-var score;
+var wins = 0;
+var losses = 0;
 
 function startGame() {
   generateMatchNumber();
@@ -43,6 +44,7 @@ $("#gray-cat").on("click", function() {
 
   var catClick = addClicks(cats[0].assignedValue);
   console.log(catClick);
+  $("#cat-totals").text(catClick);
   compareClicksToMatch(catClick, matchNumber);
 
 });
@@ -50,18 +52,21 @@ $("#gray-cat").on("click", function() {
 $("#orange-cat").on("click", function() {
   var catClick = addClicks(cats[1].assignedValue);
   console.log(catClick);
+    $("#cat-totals").text(catClick);
   compareClicksToMatch(catClick, matchNumber);
 });
 
 $("#fluffy-cat").on("click", function() {
   var catClick = addClicks(cats[2].assignedValue);
   console.log(catClick);
+    $("#cat-totals").text(catClick);
   compareClicksToMatch(catClick, matchNumber);
 });
 
 $("#tabby-cat").on("click", function() {
   var catClick = addClicks(cats[3].assignedValue);
   console.log(catClick);
+    $("#cat-totals").text(catClick);
   compareClicksToMatch(catClick, matchNumber);
 });
 
@@ -75,6 +80,7 @@ function keepScore() {
 
 }
 
+// TODO: switch back to 120 range
 // generates the total that clicks need to sum to match
 // between 19-120
 function generateMatchNumber() {
@@ -100,11 +106,18 @@ var addClicks = (function(clickValue) {
 function compareClicksToMatch(catClicks, matchNumber) {
   // var totalToMatch = matchNumber();
   if (catClicks === matchNumber) {
+    wins++;
+    $("#wins").text(wins);
+    $("#cat-totals").text("");
     console.log("you win");
+    startGame();
   }
   if (catClicks > matchNumber) {
+    losses++;
+    $("#losses").text(losses);
     console.log("you lose");
-  }
+    startGame();
+    }
 }
 
 startGame();

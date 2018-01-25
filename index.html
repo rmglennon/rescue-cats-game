@@ -12,14 +12,21 @@
 </head>
 
 <body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Rescue the Cats</h1>
+    <p class="lead">Collect the cats, but don't try to take to many at once.</p>
+  </div>
+</div>
+
 <div class="container">
 
 	<div class="row">
 		<div class="col-md-12">
-    		<h1>Cat guess</h1>
-        <div>Total is:
-          <p id="random-total"></p>
-        </div>
+      </div>
+      <div>
+
 							<img id="gray-cat" class="img-fluid guess" src="assets/images/cat1.jpg" alt="Gray cat">
 
 							<img id="orange-cat" class="img-fluid guess" src="assets/images/cat2.jpg" alt="Orange cat">
@@ -28,7 +35,35 @@
 
 							<img id="tabby-cat" class="img-fluid guess" src="assets/images/cat4.jpg" alt="Tabby cat">
 			</div>
+
+
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div>Catch this many cats:
+        <p id="random-total"></p>
     </div>
+  </div>
+    <div class="col-md-4">
+
+        <div>Cats collected:
+          <p id="cat-totals"></p>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+        <div>Wins:
+          <p id="wins"></p>
+
+      </div>
+      <div>Losses:
+          <p id="losses"></p>
+      </div>
+    </div>
+    </div>
+
+    </div>
+</div>
 </div>
 
 
