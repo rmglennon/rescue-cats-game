@@ -1,7 +1,11 @@
 $(document).ready(function(){
 
+var matchNumber;
+var score;
+
 function startGame() {
-  matchNumber();
+  generateMatchNumber();
+  giveCatsRandomValues();
 }
 
 var cats = [
@@ -16,19 +20,13 @@ var cats = [
   }
 ]
 
+
+
 function giveCatsRandomValues() {
   for (var i = 0; i < cats.length; i++) {
     cats[i].assignedValue = generateRandomNum(1, 12);
   }
 }
-
-giveCatsRandomValues();
-// handleCatClicks();
-
-// console.log(cats[0].name + " : " + cats[0].assignedValue );
-// console.log(cats[1].name + " : " + cats[1].assignedValue );
-// console.log(cats[2].name + " : " + cats[2].assignedValue );
-// console.log(cats[3].name + " : " + cats[3].assignedValue );
 
 // function handleCatClicks() {
 //   for (var i = 0; i < cats.length; i++) {
@@ -43,28 +41,33 @@ $("#gray-cat").on("click", function() {
   //console.log(cats[0].name + " value: " + cats[0].assignedValue);
   // console.log(addClicks(cats[0].assignedValue));
 
-  var catReadout = addClicks(cats[0].assignedValue);
-  // console.log(catReadout);
+  var catClick = addClicks(cats[0].assignedValue);
+  console.log(catClick);
+  compareClicksToMatch(catClick, matchNumber);
+
 });
 
 $("#orange-cat").on("click", function() {
-  console.log("orange cat value " + cats[1].assignedValue);
-  addClicks(cats[1].assignedValue);
+  var catClick = addClicks(cats[1].assignedValue);
+  console.log(catClick);
+  compareClicksToMatch(catClick, matchNumber);
 });
 
 $("#fluffy-cat").on("click", function() {
-  console.log("fluffy cat value " + cats[2].assignedValue);
-  addClicks(cats[2].assignedValue);
+  var catClick = addClicks(cats[2].assignedValue);
+  console.log(catClick);
+  compareClicksToMatch(catClick, matchNumber);
 });
 
 $("#tabby-cat").on("click", function() {
-  console.log("tabby cat value " + cats[3].assignedValue);
-  addClicks(cats[3].assignedValue);
+  var catClick = addClicks(cats[3].assignedValue);
+  console.log(catClick);
+  compareClicksToMatch(catClick, matchNumber);
 });
 
+// general function to generate a random number
 function generateRandomNum(min, max) {
   var num = Math.floor(Math.random() * (max - min + 1) + min);
-  console.log(num);
   return num;
 }
 
@@ -74,10 +77,10 @@ function keepScore() {
 
 // generates the total that clicks need to sum to match
 // between 19-120
-function matchNumber() {
-  var match = generateRandomNum(19,120);
-  $("#random-total").text(match);
-  return match;
+function generateMatchNumber() {
+  matchNumber = generateRandomNum(19,30);
+  $("#random-total").text(matchNumber);
+  return matchNumber;
 }
 
 // var clickCounter = 0;
@@ -94,11 +97,12 @@ var addClicks = (function(clickValue) {
   }
 })();
 
-function compareClicksToMatch(clicks, match) {
-  if (addClicks === match) {
+function compareClicksToMatch(catClicks, matchNumber) {
+  // var totalToMatch = matchNumber();
+  if (catClicks === matchNumber) {
     console.log("you win");
   }
-  if (addClicks > match) {
+  if (catClicks > matchNumber) {
     console.log("you lose");
   }
 }
