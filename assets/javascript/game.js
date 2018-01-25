@@ -9,6 +9,11 @@ function startGame() {
   giveCatsRandomValues();
 }
 
+function playAgain() {
+  generateMatchNumber();
+  giveCatsRandomValues();
+}
+
 var cats = [
   {
     name: "#gray-cat",
@@ -20,8 +25,6 @@ var cats = [
   { name: "#tabby-cat"
   }
 ]
-
-
 
 function giveCatsRandomValues() {
   for (var i = 0; i < cats.length; i++) {
@@ -39,14 +42,11 @@ function giveCatsRandomValues() {
 // }
 
 $("#gray-cat").on("click", function() {
-  //console.log(cats[0].name + " value: " + cats[0].assignedValue);
-  // console.log(addClicks(cats[0].assignedValue));
 
   var catClick = addClicks(cats[0].assignedValue);
   console.log(catClick);
   $("#cat-totals").text(catClick);
   compareClicksToMatch(catClick, matchNumber);
-
 });
 
 $("#orange-cat").on("click", function() {
@@ -76,10 +76,6 @@ function generateRandomNum(min, max) {
   return num;
 }
 
-function keepScore() {
-
-}
-
 // TODO: switch back to 120 range
 // generates the total that clicks need to sum to match
 // between 19-120
@@ -103,23 +99,40 @@ var addClicks = (function(clickValue) {
   }
 })();
 
-function compareClicksToMatch(catClicks, matchNumber) {
+function compareClicksToMatch(catsCollected, matchNumber) {
   // var totalToMatch = matchNumber();
-  if (catClicks === matchNumber) {
+  if (catsCollected === matchNumber) {
     wins++;
     $("#wins").text(wins);
-    $("#cat-totals").text("");
     console.log("you win");
-    startGame();
+    // addClicks(catClicks * -1);
+    playAgain();
   }
-  if (catClicks > matchNumber) {
+  if (catsCollected > matchNumber) {
     losses++;
     $("#losses").text(losses);
     console.log("you lose");
-    startGame();
+        // addClicks(catClicks * -1);
+    playAgain();
     }
 }
 
 startGame();
 
+
+
 });
+
+
+
+// // // query the value of the addClicks counter
+// var myTotalScore = addClicks(0);
+//
+// // // multiple the current value of the counter times negative one
+// myTotalScore = (myTotalScore * -1);
+//
+// // // reset the counter to zero
+// addClick(myTotalScore);
+//
+// // // check to make sure the counter is at zero
+// console.log("The big counter is now at: " + addClick(0));

@@ -8,19 +8,39 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </head>
 
 <body>
 
 <div class="container">
   <div class="jumbotron">
-    <h1 class="display-4">Rescue the Cats</h1>
-    <p class="lead">Collect the cats, but don't try to take to many at once.</p>
+    <h1 class="display-4">Rescue the Cats Game</h1>
+    <p class="lead">Collect the cats, but don't try to take too many at once.</p>
   </div>
 </div>
 
 <div class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Game rules</h2>
+      <p>You will be given a random number of cats to collect at the start of the game. </p>
+      <p>
+        There are four cats below. By clicking on a cat, you will collect a specific amount
+        of points to your total score. You win the game by matching your total number
+        of cats collected to the random number you were supposed to collect. You lose the game
+        if you collect more cats that your house can hold and your total
+        score is higher than the random number.</p>
+        <p>The value of each cat is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the values of each cat.</p>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h3>Score<h3>
+    </div>
+
+  </div>
 
 	<div class="row">
 		<div class="col-md-12">
@@ -67,12 +87,6 @@
 </div>
 
 
-<!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
-
-<!-- <script>
-$("#pbj").on("click", function() {
-alert("PBJ eaten: ");
-});
-</script> -->
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
