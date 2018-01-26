@@ -5,81 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Cat Collector</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 </head>
 
 <body>
 
-  <div class="jumbotron">
-    <h1 class="display-4">Rescue the Cats Game</h1>
-    <p class="lead">Collect the cats, but they will escape if you try to collect too many at once!</p>
-  </div>
+<div class="jumbotron text-center">
+  <h1 class="display-4">Rescue the Cats Game</h1>
+  <p class="lead">Collect the cats, but they will escape if you collect too many at once!</p>
+</div>
 
 <div class="container">
-
   <div class="row">
     <div class="col-md-5">
       <h2>Game rules</h2>
       <p>You will be given a random number of cats to rescue at the start of the game. </p>
-      <p>
-        There are four cats below. By clicking on a cat, you will rescue a specific amount
-        of cats and add points to your score. You win the game by exactly matching your cats collected to the random number you were directed to rescue. You lose if you rescue too many cats and your
-        score is higher than the random number.</p>
-        <p>The value of each cat click is hidden from you until you click on it.</p>
-        <p>Each time the game starts, the values of the cats will change.</p>
+      <p> There are four cats below. By clicking on a cat, you will rescue a specific amount of cats and add points to your score. You win the game by exactly matching your cats collected to the random number you were directed to rescue. You lose if you rescue too many cats and they escape!</p>
+      <p>The value of each cat click is hidden from you until you click on it. Each time the game starts, the values of the cats will change.</p>
     </div>
+
+    <div class="offset-md-1"></div>
+
     <div class="col-md-4">
-      <div><h3>Catch this many cats:</h3>
+      <div>
+      	<h2 class="section-header">Cats to rescue</h2>
         <p id="random-total"></p>
-    </div>
-  </div>
-    <div class="col-md-3">
-      <h3>Score<h3>
-        <div>Cats collected:
+    	</div>
+      <div>
+      	<h2>Cats collected</h2>
           <p id="cat-totals"></p>
       </div>
-      <div>Wins:
-        <p id="wins"></p>
-
-    </div>
-    <div>Losses:
+  	</div>
+    <div class="col-md-2">
+      <h2>Score</h2>
+      <div>
+      	<h4>Wins</h4>
+       	<p id="wins"></p>
+			</div>
+    	<div>
+    		<h4>Losses</h4>
         <p id="losses"></p>
+    	</div>
     </div>
-    </div>
-
-
   </div>
 
 	<div class="row">
 		<div class="col-md-12">
-      </div>
-      <div>
 
-							<img id="gray-cat" class="img-fluid guess" src="assets/images/cat1.jpg" alt="Gray cat">
+			<img id="gray-cat" class="img-fluid guess" src="assets/images/cat1.jpg" alt="Gray cat">
 
-							<img id="orange-cat" class="img-fluid guess" src="assets/images/cat2.jpg" alt="Orange cat">
+			<img id="orange-cat" class="img-fluid guess" src="assets/images/cat2.jpg" alt="Orange cat">
 
-							<img id="fluffy-cat" class="img-fluid guess" src="assets/images/cat3.jpg" alt="Fluffy cat">
+			<img id="fluffy-cat" class="img-fluid guess" src="assets/images/cat3.jpg" alt="Fluffy cat">
 
-							<img id="tabby-cat" class="img-fluid guess" src="assets/images/cat4.jpg" alt="Tabby cat">
-			</div>
-
-
+			<img id="tabby-cat" class="img-fluid guess" src="assets/images/cat4.jpg" alt="Tabby cat">
+		
+		</div>
   </div>
-    </div>
+</div>
 
-    <!-- Make footer container fluid so it goes across the screen -->
 
-    <div class="container-fluid footer-section">
-    	<div class="row">
-    		<p>&copy; Copyright 2018 Rhonda Glennon</p>
-    	</div>
-    </div>
+<div class="container-fluid footer-section text-center"></div>
 
 
 <script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
 </html>
