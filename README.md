@@ -2,6 +2,8 @@
 
 In this game, you need to rescue the cats, but they will escape if you get too many at once!
 
+Play online at https://rmglennon.github.io/rescue-cats-game.
+
  ## Game rules
 
  You will be given a random number of cats to rescue at the start of the game.
